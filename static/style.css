@@ -1,0 +1,71 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 2rem;
+}
+.container { max-width: 800px; margin: auto; }
+h1 { color: #ffffff; border-bottom: 2px solid #333; padding-bottom: 10px; }
+.controls {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+.category-header {
+    color: #bb86fc; text-transform: capitalize; margin-top: 1.5rem;
+    cursor: pointer; display: flex; justify-content: space-between;
+    align-items: center; user-select: none; border-bottom: 1px solid #333; padding-bottom: 8px;
+}
+.category-header::after { content: '▶'; font-size: 0.8em; transition: transform 0.2s ease-in-out; }
+.category-header.expanded::after { transform: rotate(90deg); }
+.podcast-container { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding-left: 10px; }
+.podcast-item {
+    background-color: #1e1e1e; border-left: 4px solid #bb86fc;
+    padding: 15px; margin: 1rem 0; border-radius: 4px;
+}
+.podcast-title { font-weight: bold; margin-bottom: 10px; }
+audio { width: 100%; margin-top: 10px; }
+
+/* --- New Voice Changer Box Styles --- */
+.voice-changer-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #333;
+    align-items: center;
+}
+.voice-changer-box select {
+    padding: 5px;
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+.regenerate-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.regenerate-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+.status-message {
+    font-size: 0.8em;
+    color: #28a745;
+    margin-left: 10px;
+}
+
+/* --- Transcript Styles --- */
+.transcript-button { background-color: #333; color: #e0e0e0; border: 1px solid #555; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 10px; font-size: 0.9em; }
+.transcript-container { background-color: #2c2c2c; border-radius: 4px; padding: 15px; margin-top: 10px; line-height: 1.6; max-height: 200px; overflow-y: auto; display: none; }
+.transcript-container span { display: inline; }
+.transcript-container span.highlight { background-color: #bb86fc; color: #121212; border-radius: 3px; padding: 0 2px; font-weight: bold; transition: background-color 0.1s; }

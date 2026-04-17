@@ -1,0 +1,9 @@
+requests
+transformers
+torch
+gtts
+pydub
+schedule
+newspaper3k
+flask
+nltk
